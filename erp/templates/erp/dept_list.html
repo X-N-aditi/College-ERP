@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: rgb(117, 72, 156);
+        }
+        .container{
+            background-color:rgb(223, 213, 225);
+            padding: 15px;
+            border-radius: 5px;
+        }
+        table thead{
+            background-color: rgb(117, 72, 156);
+            color: white;
+        }
+        table td,
+        th {
+            border: 1px solid #000;
+            padding: 12px;
+        }
+        a{
+            text-decoration: none;
+            color: black;
+        }
+        button{
+            background-color: #4CAF50;
+            margin: 5px;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        button a{
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>List of Departments</h1>
+
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th colspan="2">Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for dept in depts %}
+        <tr>
+            <td>{{ dept.id }}</td>
+            <td>{{ dept.name }}</td>
+            <td>
+                <a href="{% url 'dept_update' dept.pk %}">Edit</a>
+            </td>
+            <td>
+                <a href="{% url 'dept_delete' dept.pk %}">Delete</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+<button>
+    <a href="{% url 'dept_create' %}">Create New Department</a>
+</button>
+<button>
+    <a href="{% url 'home' %}">Back to Home</a>
+</button>
+
+    </div>
+</body>
+</html>

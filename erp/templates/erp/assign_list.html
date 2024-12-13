@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: rgb(117, 72, 156);
+        }
+        .container{
+            background-color:rgb(223, 213, 225);
+            padding: 15px;
+            border-radius: 5px;
+        }
+        table thead{
+            background-color: rgb(117, 72, 156);
+            color: white;
+        }
+        table td,
+        th {
+            border: 1px solid #000;
+            padding: 12px;
+        }
+        a{
+            text-decoration: none;
+            color: black;
+        }
+        button{
+            background-color: #4CAF50;
+            margin: 10px;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        button a{
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>List of Assign</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Class ID</th>
+                <th>Course</th>
+                <th>Teacher</th>
+                <th colspan="2">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for assign in assigns %}
+            <tr>
+                <td>{{ assign.class_id }}</td>
+                <td>{{ assign.course }}</td>
+                <td>{{ assign.teacher }}</td>
+                <td>
+                    <a href="{% url 'assign_update' assign.pk %}">Edit</a>
+                </td>
+                <td>
+                    <a href="{% url 'assign_delete' assign.pk %}">Delete</a>
+                </td>
+
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <button>
+        <a href="{% url 'assign_create' %}">Create New Assign</a>
+    </button>
+    <button>
+        <a href="{% url 'home' %}">Back to Home</a>
+    </button>
+    </div>
+
+</body>
+
+</html>

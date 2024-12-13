@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            background-color:rgb(223, 213, 225);
+            padding: 15px;
+            border-radius: 5px;
+        }
+        .box{
+            width: 250px;
+            text-align: center;
+            height:180px;
+            background-color: rgb(117, 72, 156);
+            margin: 50px;
+            border-radius: 10px;
+            
+        }
+        .sec-tion{
+            display: grid;
+            grid-template-columns: auto auto auto;
+        }
+        a{
+            text-decoration: none;
+            color: black;
+        }
+        button {
+            background-color: #c1a3c5;
+            margin: 20px;
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        button a {
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Teacher Viewport</h1>
+        <div class="sec-tion">
+            <div class="box">
+                <button>
+                    <a href="{% url 'teacher_create' %}">Create New Teacher</a><br>
+                </button>
+                <button>
+                    <a href="{% url 'teacher_list' %}">Teachers Data</a>
+                </button>
+            </div>
+            <div class="box">
+                <button>
+                    <a href="{% url 'custom_user_create' %}">Create New User</a><br>
+                </button>
+                <button>
+                    <a href="{% url 'custom_user_list' %}">Custom User Data</a>
+                </button>
+            </div>
+            <div class="box">
+                <button>
+                    <a href="{% url 'dept_create' %}">Create New Department</a><br>
+                </button>
+                <button>
+                    <a href="{% url 'dept_list' %}">Department Data</a>
+                </button>
+            </div>
+            <div class="box">
+                <button>
+                    <a href="{% url 'course_create' %}">Create New Course</a><br>
+                </button>
+                <button>
+                    <a href="{% url 'course_list' %}">Course Data</a>
+                </button>
+            </div>
+            <div class="box">
+                <button>
+                    <a href="{% url 'student_create' %}">Create New Student</a><br>
+                </button>
+                <button>
+                    <a href="{% url 'student_list' %}">Student Data</a>
+                </button>
+            </div>
+            <div class="box">
+                <button>
+                    <a href="{% url 'assign_create' %}">Create New Assign</a><br>
+                </button>
+                <button>
+                    <a href="{% url 'assign_list' %}">Assigns Data</a>
+                </button>
+            </div>
+            <div class="box">
+                <button>
+                    <a href="{% url 'attendance_create' %}">Create New Attendance</a><br>
+                </button>
+                <button>
+                    <a href="{% url 'attendance_list' %}">Attendance Data</a>
+                </button>
+            </div>
+        </div>
+        <button>
+            <a href="{% url 'home' %}">Back to Home</a>
+        </button>
+    </div>
+</body>
+</html>

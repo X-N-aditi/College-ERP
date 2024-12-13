@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Success</title>
+    <style>
+        button{
+            background-color: #4CAF50;
+            margin: 5px;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        button a{
+            color: white;
+        }
+    </style>
+</head>
+<body> 
+    <h1>Success! Your form has been submitted successfully.</h1>
+    <button>
+        <a href="{% url 'student_create' %}">Create New Student</a>
+    </button>
+    <button>
+        <a href="{% url 'teacher_create' %}">Create New Teacher</a>
+    </button> 
+    <button>
+        <a href="{% url 'home' %}">Back to Home</a>
+    </button>
+    
+
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            margin-left: 250px;
+            margin-right: 250px;
+        }
+
+        /* static/css/style.css */
+
+        /* General styles for form elements */
+        .form-control {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .form-control:focus {
+            border-color: #4CAF50;
+            background-color: rgb(120, 216, 165);
+            outline: none;
+        }
+
+        .form-check-input {
+            margin-top: 5px;
+            margin-right: 5px;
+        }
+
+        /* Customize the form container */
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            background-color: white;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
+
+        /* Style the submit button */
+        form button {
+            padding: 10px;
+            font-size: 16px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        form button:hover {
+            background-color: #45a049;
+        }
+
+        a {
+            text-decoration: none;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="box">
+        <form method="POST">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Update////Create</button>
+            <button>
+                <a href="{% url 'home' %}">Back to Home</a>
+            </button>
+        </form>
+    </div>
+
+</body>
+
+</html>
